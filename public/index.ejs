@@ -3,25 +3,37 @@
 <html>
 
 	<head>
-		<title>Vote for things!</title>
+		<title>Be Social!</title>
 		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<link href="/public/css/search.css" rel="stylesheet" type="text/css">
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 	</head>
 
-	<header><% include nav.ejs %></header>
-
 	<body>
-		<div class="container">
-			<h1>FCC Voting</h1>
-			<p>Select a poll to vote and see the results, <a href="/newpoll">or make a new poll!</a></p>
-			<div id="polls"></div>
+		<div id="user" class="top-right">
+			<% if(isAuthed) {%>
+			<div class="nav-item"><%= user.google.name %></div>
+			<a href="/logout"><div class="nav-item">Logout</div></a>
+			<% } else { %>
+			<a href="/login"><div class="nav-item">Login</div></a>
+			<% } %>
+		</div>
+
+		<div class="container search main">
+			<h2>Where to tonight?</h2>
+			<p>Looking for things to do? See which bars people are going to!</p>
+			<form id="search">
+				<input type="text" name="location" id="search-bar" placeholder="Enter your location">
+				<input type="submit" value="submit" id="search-submit">
+			</form>
 		</div>
 		
-		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/pollController.client.js"></script>
-		<% if(isAuthed) { %>
-			<script type="text/javascript" src="controllers/userController.client.js"></script>
-		<% } %>
+		<div id="results">
+			
+		</div>
+		
+		<script type="text/javascript" src="controllers/searchController.client.js"></script>
+		
 	</body>
 
 </html>

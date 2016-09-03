@@ -1,5 +1,5 @@
 {
-  "name": "clementinejs-fcc",
+  "name": "fcc-social-app",
   "version": "1.0.1",
   "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
   "main": "server.js",
@@ -24,13 +24,13 @@
   "author": "Blake Johnston",
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^2.2.2",
     "dotenv": "^1.2.0",
     "ejs": "^2.5.1",
     "express": "^4.12.4",
     "express-session": "^1.11.3",
     "mongoose": "^4.1.0",
     "passport": "^0.3.0",
-    "passport-github": "^1.0.0"
+    "passport-google-oauth": "^1.0.0",
+    "yelp": "^1.0.1"
   }
 }

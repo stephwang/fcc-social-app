@@ -1,0 +1,50 @@
+#results{
+    margin-top: 30px;
+}
+
+.resultCard {
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+    width: 700px;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    display: flex;
+    justify-content: space-around;
+}
+
+.bar-image {
+    display: inline-block;
+}
+
+.bar-info {
+    display: inline-block;
+    width: 450px;
+    margin: 0px 10px;
+}
+
+.bar-title {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bar-rating {
+    display: block;
+    font-size: 10px;
+    font-style: italic;
+    color: #777;
+}
+
+.bar-snippet {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.bar-actions {
+    display: inline-block;
+    width: 100px;
+}

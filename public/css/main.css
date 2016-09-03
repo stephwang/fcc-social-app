@@ -36,144 +36,19 @@ a {
 	padding: 0;
 }
 
-.float-right {
-	float: right;
-}
-
-
 /****** Header Styling ******/
-
-header {
-	height: 20px;
-	margin: 0 auto 30px auto;
-	text-align: center;
-	background-color: #eaeaea;
-	padding: 15px 50px;
-}
-
-header div{
-	padding: 0;
-	display: inline;
-	margin: 0px 7px;
-}
-
-.nav-link {
-	text-decoration: none;
-	margin: 0;
-	color: #727272;
-}
-
-.nav-link:visited {
-	color: #727272;
-}
-
-.nav-link:hover {
-	color: #FFA000;
-}
-
-.nav-link:active {
-	color: #FF630D;
-}
-
-#menu {
+.top-right{
 	position: absolute;
-	display: none;
-	min-width: 100px;
-	margin-top: 15px;
-	background-color: #eee;
-}
-.menu-item {
-	border: 1px solid #ddd;
-	display: block;
-	padding: 7px 0px;
-	margin: 0px;
+	top: 15px;
+	right: 15px;
 }
 
-#logo{
-	float: left;
-}
-
-#user{
-	min-width: 120px;
-}
-.display-name {
-	font-weight: 400;
-	color: #00BCD4;
-}
-
-#login {
-	min-width: 120px;
-}
-
-/****** Login Styling ******/
-
-.login {
-	margin: 86px auto 0 auto;
-	text-align: center;
-}
-
-#login-btn {
-	width: 225px;
-	padding: 7px 5px;
-}
-
-.btn p {
-	margin: 8px 0 0 0;
-	padding: 0;
-}
-
-.btn > img {
-	float: left;
-	margin-left: 10px
-}
-
-/****** Click Styling ******/
-
-.btn-container {	/* Styling for the div that contains the buttons */
-	margin: -10px auto 0 auto;
-	text-align: center;
-}
-
-.btn {	/* Styling for buttons */
-	margin: 0 8px;
-	color: white;
-	background-color: #00BCD4;
+.nav-item{
 	display: inline-block;
-	border: 0;
-	font-size: 14px;
-	border-radius: 3px;
-	padding: 10px 5px;
-	width: 100px;
-	font-weight: 500;
+	margin: 0px 10px;
 }
 
-.btn:focus {	/* Remove outline when hovering over button */
-	outline: none;
-}
-
-.btn:active {	/* Scale the button down by 10% when clicking on button */
-	transform: scale(0.9, 0.9);
-	-webkit-transform: scale(0.9, 0.9);
-	-moz-transform: scale(0.9, 0.9);
-}
-
-.btn-delete {	/* Styling for delete button */
-	background-color: #ECEFF1;
-	color: #212121;
-}
-
-#click-nbr {
-	font-weight: 400;
-}
-
-/* polls list on the main page */
-.poll{
-	padding: 10px 0px;
-	margin: 5px auto;
-	width: 700px;
-	background-color: #eee;
-	text-decoration: none;
-}
-.poll:hover{
-	background-color: #ddd;
+/* search bar */
+.main {
+	margin-top: 100px;
 }

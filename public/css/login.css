@@ -1,0 +1,56 @@
+/****** Login Styling ******/
+
+.login {
+	margin: 86px auto 0 auto;
+	text-align: center;
+}
+
+#login-btn {
+	width: 225px;
+	padding: 7px 5px;
+}
+
+.btn p {
+	margin: 8px 0 0 0;
+	padding: 0;
+}
+
+.btn > img {
+	float: left;
+	margin-left: 10px
+}
+
+/****** Click Styling ******/
+
+.btn-container {	/* Styling for the div that contains the buttons */
+	margin: -10px auto 0 auto;
+	text-align: center;
+}
+
+.btn {	/* Styling for buttons */
+	margin: 0 8px;
+	color: white;
+	background-color: #00BCD4;
+	display: inline-block;
+	border: 0;
+	font-size: 14px;
+	border-radius: 3px;
+	padding: 10px 5px;
+	width: 100px;
+	font-weight: 500;
+}
+
+.btn:focus {	/* Remove outline when hovering over button */
+	outline: none;
+}
+
+.btn:active {	/* Scale the button down by 10% when clicking on button */
+	transform: scale(0.9, 0.9);
+	-webkit-transform: scale(0.9, 0.9);
+	-moz-transform: scale(0.9, 0.9);
+}
+
+.btn-delete {	/* Styling for delete button */
+	background-color: #ECEFF1;
+	color: #212121;
+}
