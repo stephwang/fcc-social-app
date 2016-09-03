@@ -1,6 +1,15 @@
 (function() {
     var apiUrl = window.location.origin + '/search';
     
+    $(document).ready(getBars());
+
+    $("#search").submit(function(e) {
+        e.preventDefault();
+        $("#results").html("<div class='container'>Loading results...</div>");
+        var location = $("#search-bar").val();
+        getBars(location);
+    });
+    
     function resultCard(bar) {
         return `
         <div class="resultCard">
@@ -23,9 +32,7 @@
         `;
     }
     
-    $("#search").submit(function(e) {
-        e.preventDefault();
-        var location = $("#search-bar").val();
+    function getBars(location=null){
         $.ajax({
              url: apiUrl,
             type: 'GET',
@@ -33,15 +40,18 @@
             contentType: 'application/json; charset=utf-8',
             success: function (response) {
                 $("#results").html("");
-                var bars = response.businesses;
-                bars.forEach(function(bar){
-                    $("#results").append(resultCard(bar));
-                });
+                if(response != '') {
+                    $("#search-bar").val(response.query);
+                    var bars = response.businesses;
+                    bars.forEach(function(bar){
+                        $("#results").append(resultCard(bar));
+                    });
+                }
             },
             error: function (err) {
                 console.log(err);
             }
         }); 
-    });
+    }
 
 })();

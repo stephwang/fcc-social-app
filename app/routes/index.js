@@ -26,7 +26,7 @@ module.exports = function (app, passport) {
 
 	app.route('/login')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/login.html');
+			res.render(path + '/public/login.ejs');
 		});
 
 	app.route('/logout')
@@ -37,7 +37,7 @@ module.exports = function (app, passport) {
 		
 	// search
 	app.route('/search')
-		.get(searchHandler.getSearchResults);
+		.get(searchHandler.saveSearch, searchHandler.getSearchResults);
 		
 	// auth routes
 	app.route('/auth/google')
