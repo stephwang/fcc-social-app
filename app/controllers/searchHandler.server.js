@@ -1,6 +1,7 @@
 'use strict';
 
 var Search = require('../models/searches.js');
+var Going = require('../models/going.js');
 var Yelp = require('yelp');
 
 function SearchHandler () {
@@ -50,8 +51,10 @@ function SearchHandler () {
     this.getLastSearch = function(req, res){
         Search.findOne({ user: req.user.google.id }, function(err, search){
             if(err) throw err;
-            console.log("using last search of " + search.query);
-            self.executeSearch(search.query, res);
+            if(search){
+                console.log("using last search of " + search.query);
+                self.executeSearch(search.query, res);
+            }
         });
     };
 	
@@ -73,6 +76,50 @@ function SearchHandler () {
 	    }
         next();
 	};
+
+    this.getGoingData = function(req, res, next){
+        var data = { count: '0', isGoing: false };
+        // count number of people going
+        Going.count({ bar_id: req.query.id }, function(err, result){
+            if(err) throw err;
+            if(result){
+                data.count = result;
+            }
+            
+            // if authed, get if current user is going
+            if(req.isAuthenticated()){
+                Going.findOne({ 
+                    bar_id: req.query.id, user:req.user.google.id 
+                }, function(err, result){
+                    if(err) throw err;
+                    if(result)
+                        data.isGoing = true;
+
+                    res.send(data);
+                });
+            } else {
+                res.send(data);
+            }
+        });
+    };
+    
+    this.addGoing = function(req, res, next){
+        console.log("adding " + req.query.id + ", " + req.user.google.id);
+        new Going({ bar_id: req.query.id, user: req.user.google.id })
+        .save(function(err, data){
+            if(err) throw err;
+            res.send(data);
+        });
+    };
+
+    this.removeGoing = function(req, res, next){
+        console.log("removing " + req.query.id + ", " + req.user.google.id);
+        Going.remove({ bar_id: req.query.id, user: req.user.google.id }
+        , function(err, data){
+            if(err) throw err;
+            res.send(data);
+        });
+    };
 
 }
 

@@ -21,6 +21,7 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+	background-color: #fafafa;
 }
 
 p {
@@ -49,6 +50,35 @@ a {
 }
 
 /* search bar */
+.search{
+	margin-top: 50px;
+}
+
 .main {
 	margin-top: 100px;
+}
+
+#search-bar{
+	margin: 10px 0px;
+	width: 300px;
+	border-radius: 3px;
+	border: 1px solid #aaa;
+	font-size: 16px;
+	padding: 3px;
+}
+
+#search-bar:focus{
+	outline: none;
+	box-shadow: 0px 0px 1px #999 inset;
+}
+
+#search-submit {
+	height: 25px;
+	border-radius: 3px;
+	font-size: 14px;
+	background-color: #ccc;
+}
+
+#search-submit:focus {
+	outline:none;
 }

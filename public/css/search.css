@@ -3,15 +3,18 @@
 }
 
 .resultCard {
+    background-color: white;
     margin: 10px auto;
     padding: 10px;
     font-size: 14px;
     font-family: sans-serif;
-    width: 700px;
+    width: 600px;
     display: -webkit-flex; /* Safari */
     -webkit-justify-content: space-around; /* Safari 6.1+ */
     display: flex;
     justify-content: space-around;
+    box-shadow: 1px 1px 2px #999;
+    border-radius: 3px;
 }
 
 .bar-image {
@@ -20,8 +23,8 @@
 
 .bar-info {
     display: inline-block;
-    width: 450px;
-    margin: 0px 10px;
+    width: 350px;
+    margin: 0px 20px;
 }
 
 .bar-title {
@@ -35,6 +38,7 @@
     font-size: 10px;
     font-style: italic;
     color: #777;
+    margin: 10px 0px;
 }
 
 .bar-snippet {
@@ -47,4 +51,41 @@
 .bar-actions {
     display: inline-block;
     width: 100px;
+    padding-top: 5px;
+}
+
+.bar-users-going{
+    font-weight: bold;
+    text-align: center;
+}
+
+/***** user action buttons *****/
+.button {
+    border-radius: 3px;
+    margin: 10px 0px;
+    text-align: center;
+    padding: 3px 0px;
+    box-shadow: 1px 1px 2px 0px #777;
+    cursor:pointer;
+}
+
+.button:hover {
+    box-shadow: 1px 1px 3px 1px #999;
+}
+
+.button:active{
+    box-shadow: 1px 1px #999;
+}
+
+.yelp {
+    background-color: #d32323;
+    color: white;
+}
+
+.bar-going-button{
+    background-color: #eee;
+}
+
+.bar-not-going{
+    background-color: #85e085;
 }

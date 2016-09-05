@@ -13,6 +13,14 @@ module.exports = function (app, passport) {
 		}
 	}
 	
+	function loginRedirect (req, res, next) {
+		if (req.isAuthenticated()){
+			return next();
+		} else {
+			res.send({redirect: '/login'});
+		}
+	}
+	
 	var searchHandler = new SearchHandler();
 	
 	// general routes
@@ -35,9 +43,22 @@ module.exports = function (app, passport) {
 			res.redirect('/');
 		});
 		
-	// search
-	app.route('/search')
+	// search results
+	app.route('/api/search')
 		.get(searchHandler.saveSearch, searchHandler.getSearchResults);
+		
+	// number of people going
+	app.route('/api/goingdata')
+		.get(searchHandler.getGoingData);
+		
+	// indicate user is going
+	app.route('/api/going')
+		.get(loginRedirect, searchHandler.addGoing);
+		
+	// indicate user is not going
+	app.route('/api/notgoing')
+		.get(loginRedirect, searchHandler.removeGoing);
+
 		
 	// auth routes
 	app.route('/auth/google')
